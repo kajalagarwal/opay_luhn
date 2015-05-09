@@ -1,4 +1,3 @@
-
 import falcon
 import json
 from datetime import datetime
@@ -44,7 +43,10 @@ class LuhnResource(object):
 
 
 wsgi_app = api = falcon.API()
-things = LuhnResource()
+card_number = LuhnResource()
  
-# things will handle all requests to the '/things' URL path
-api.add_route('/things', things)
+# things will handle all requests to the '/card_number' URL path
+api.add_route('/card_number', card_number)
+
+# run command curl -X POST --data @input.json http://localhost:8020/card_number --header "Content-Type:application/json
+# run server gunicorn file_name:api
